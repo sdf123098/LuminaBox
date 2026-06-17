@@ -4,7 +4,7 @@ plugins {
 }
 
 base {
-    archivesName.set("luminabox-neoforge")
+    archivesName.set("luminabox-neoforge-26.1.x")
 }
 
 repositories {
