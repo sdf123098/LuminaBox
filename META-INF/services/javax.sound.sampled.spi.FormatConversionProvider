@@ -1,0 +1,2 @@
+# Providers of Speex sound conversion services
+org.jflac.sound.spi.FlacFormatConversionProvider

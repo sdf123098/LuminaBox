@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "luminabox",
+  "version": "${version}",
+  "name": "LuminaBox",
+  "icon": "assets/luminabox/icon.png",
+  "description": "Custom background music mod for Minecraft. Play local files, server-side playlists, or third-party platforms.",
+  "authors": [
+    "T.H.E Herta"
+  ],
+  "contact": {
+    "homepage": "https://github.com/luminabox/luminabox",
+    "sources": "https://github.com/luminabox/luminabox"
+  },
+  "license": "MIT",
+  "environment": "*",
+  "mixins": [
+    "luminabox.mixins.json"
+  ],
+  "entrypoints": {
+    "main": [
+      "com.luminabox.fabric.LuminaBoxFabric"
+    ],
+    "client": [
+      "com.luminabox.fabric.LuminaBoxFabricClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "fabric-api": "*",
+    "minecraft": ">=1.21 <26.2.0",
+    "java": ">=25"
+  }
+}

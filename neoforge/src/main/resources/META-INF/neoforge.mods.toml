@@ -1,0 +1,56 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "luminabox"
+version = "${version}"
+displayName = "Dynamic BGM"
+logoFile = "assets/luminabox/icon.png"
+mixins = [
+    { config = "luminabox.mixins.json" }
+]
+description = '''
+Custom background music mod for Minecraft.
+Play local files, server-side playlists, or third-party platforms.
+'''
+authors = "T.H.E Herta"
+displayURL = "https://github.com/luminabox/luminabox"
+
+[[dependencies.luminabox]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.0,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.luminabox]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21,27)"
+ordering = "NONE"
+side = "BOTH"
+
+[[jarjars]]
+identifier = "javazoom:jlayer"
+versionRange = "[1.0.1,)"
+
+[[jarjars]]
+identifier = "com.tianscar.javasound:jaad"
+versionRange = "[0.9.4,)"
+
+[[jarjars]]
+identifier = "com.googlecode.soundlibs:jorbis"
+versionRange = "[0.0.17-2,)"
+
+[[jarjars]]
+identifier = "org.jflac:jflac-codec"
+versionRange = "[1.5.2,)"
+
+[[jarjars]]
+identifier = "com.googlecode.soundlibs:mp3spi"
+versionRange = "[1.9.5.4,)"
+
+[[jarjars]]
+identifier = "com.googlecode.soundlibs:vorbisspi"
+versionRange = "[1.0.3-2,)"
