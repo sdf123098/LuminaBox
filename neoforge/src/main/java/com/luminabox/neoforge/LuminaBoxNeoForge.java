@@ -96,7 +96,7 @@ public class LuminaBoxNeoForge {
 
                 // Key press check in tick
                 while (KeyBindings.openMusicMenuKey.consumeClick()) {
-                    client.setScreen(new com.luminabox.client.gui.MusicPlayerScreen());
+                    client.gui.setScreen(new com.luminabox.client.gui.MusicPlayerScreen());
                 }
             });
 
@@ -105,7 +105,7 @@ public class LuminaBoxNeoForge {
                     event.addListener(
                         net.minecraft.client.gui.components.Button.builder(
                             net.minecraft.network.chat.Component.translatable("gui.luminabox.pause_menu_btn"),
-                            button -> net.minecraft.client.Minecraft.getInstance().setScreen(new com.luminabox.client.gui.MusicPlayerScreen())
+                            button -> net.minecraft.client.Minecraft.getInstance().gui.setScreen(new com.luminabox.client.gui.MusicPlayerScreen())
                         ).bounds(10, 10, 90, 20).build()
                     );
                 }

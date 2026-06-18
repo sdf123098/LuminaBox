@@ -137,10 +137,33 @@ public class AmbientMusicEngine {
         return track;
     }
 
+    private static java.lang.reflect.Method getBossOverlayMethod = null;
+    private static boolean bossOverlayReflectionFailed = false;
+
+    private Object getBossOverlay(Minecraft client) {
+        if (bossOverlayReflectionFailed) return null;
+        try {
+            // Try client.gui.getBossOverlay() (26.1)
+            if (getBossOverlayMethod == null) {
+                try {
+                    getBossOverlayMethod = client.gui.getClass().getMethod("getBossOverlay");
+                } catch (NoSuchMethodException e) {
+                    // In 26.2, bossOverlay might be on a different object
+                    bossOverlayReflectionFailed = true;
+                    return null;
+                }
+            }
+            return getBossOverlayMethod.invoke(client.gui);
+        } catch (Exception e) {
+            bossOverlayReflectionFailed = true;
+            return null;
+        }
+    }
+
     private String detectBossFight(Minecraft client) {
         if (reflectionFailed) return null;
         try {
-            var bossOverlay = client.gui.getBossOverlay();
+            var bossOverlay = getBossOverlay(client);
             if (bossOverlay == null) return null;
 
             if (eventsFieldCache == null) {

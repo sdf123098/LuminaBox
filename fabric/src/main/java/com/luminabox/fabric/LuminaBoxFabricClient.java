@@ -29,7 +29,7 @@ public class LuminaBoxFabricClient implements ClientModInitializer {
             }
             // Check key press
             while (KeyBindings.openMusicMenuKey.consumeClick()) {
-                client.setScreen(new com.luminabox.client.gui.MusicPlayerScreen());
+                client.gui.setScreen(new com.luminabox.client.gui.MusicPlayerScreen());
             }
         });
 

@@ -21,7 +21,7 @@ public abstract class PauseScreenMixin extends Screen {
         // Add "Music Player" button in top-left of the Pause screen
         this.addRenderableWidget(Button.builder(
             Component.translatable("gui.luminabox.pause_menu_btn"),
-            button -> this.minecraft.setScreen(new MusicPlayerScreen())
+            button -> this.minecraft.gui.setScreen(new MusicPlayerScreen())
         ).bounds(10, 10, 90, 20).build());
     }
 }

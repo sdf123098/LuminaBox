@@ -4,7 +4,7 @@ plugins {
 }
 
 base {
-    archivesName.set("luminabox-fabric-26.1.x")
+    archivesName.set("luminabox-fabric-26.2.x")
 }
 
 dependencies {
