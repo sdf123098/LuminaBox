@@ -1,0 +1,31 @@
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build.properties
+
+# IDE files
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+.vscode/
+
+# MacOS
+.DS_Store
+
+# Logs
+logs/
+*.log
+
+# Fabric / NeoForge specific
+run/
+.mixin.out/
+
+# Other
+temp/
+tmp/
+.codegraph/
+*.docx
+*.err
+bilibili-extract/
