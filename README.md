@@ -24,7 +24,7 @@
 ## 📥 Installation
 
 ### Requirements
-- Minecraft 1.21.x
+- Minecraft 1.21-1.21.1、26.1.x
 - [Fabric Loader](https://fabricmc.net/) OR [NeoForge](https://neoforged.net/)
 
 ### Setup
