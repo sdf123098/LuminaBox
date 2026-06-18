@@ -24,7 +24,7 @@
 ## 📥 安装指南
 
 ### 运行需求
-- Minecraft 1.21.x
+- Minecraft 1.21-1.21.1、26.1.x
 - [Fabric Loader](https://fabricmc.net/) 或 [NeoForge](https://neoforged.net/)
 
 ### 安装步骤
