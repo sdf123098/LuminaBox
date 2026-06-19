@@ -647,35 +647,27 @@ public class CustomMusicManager {
         }
     }
 
-    // --- RPC / External Player Control Methods ---
-    private void sendMediaKey(int keyCode) {
-        // Simple VBScript or Powershell hook for Windows Media Keys
-        // 179 = Play/Pause, 176 = Next Track, 177 = Previous Track
-        new Thread(() -> {
-            try {
-                String script = "(new-object -com wscript.shell).SendKeys([char]" + keyCode + ")";
-                ProcessBuilder pb = new ProcessBuilder("powershell", "-c", script);
-                pb.start();
-            } catch (Exception e) {
-                LuminaBox.LOGGER.error("Failed to send media key", e);
-            }
-        }).start();
-    }
-
+    // --- RPC / Internal Player Control Methods ---
+    // Controls LuminaBox's own player only. External system media keys are
+    // intentionally not used to comply with CurseForge's security policy.
     public void rpcPlayPause() {
-        sendMediaKey(179); // VK_MEDIA_PLAY_PAUSE
+        if (state == PlaybackState.PLAYING) {
+            pause();
+        } else if (state == PlaybackState.PAUSED) {
+            resume();
+        }
     }
 
     public void rpcNext() {
-        sendMediaKey(176); // VK_MEDIA_NEXT_TRACK
+        next();
     }
 
     public void rpcPrevious() {
-        sendMediaKey(177); // VK_MEDIA_PREV_TRACK
+        previous();
     }
 
     public String getRpcCurrentlyPlaying() {
-        return "外部遥控模式 (External OS Player)";
+        return currentTrack != null ? currentTrack.getTitle() : "";
     }
 
     // --- Server Upload Methods ---
